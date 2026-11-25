@@ -1,0 +1,310 @@
+/* Shared design system for common UI components.
+   Neutral slate base with a single indigo accent. */
+
+:root {
+  /* Accent */
+  --c-accent: #4f46e5;
+  --c-accent-hover: #4338ca;
+  --c-accent-active: #3730a3;
+  --c-accent-soft: #eef2ff;
+  --c-accent-contrast: #ffffff;
+
+  /* Neutral slate scale */
+  --c-slate-50: #f8fafc;
+  --c-slate-100: #f1f5f9;
+  --c-slate-200: #e2e8f0;
+  --c-slate-300: #cbd5e1;
+  --c-slate-400: #94a3b8;
+  --c-slate-500: #64748b;
+  --c-slate-600: #475569;
+  --c-slate-700: #334155;
+  --c-slate-800: #1e293b;
+  --c-slate-900: #0f172a;
+
+  /* Surfaces / text */
+  --c-surface: #ffffff;
+  --c-surface-muted: var(--c-slate-50);
+  --c-border: var(--c-slate-200);
+  --c-text: var(--c-slate-800);
+  --c-text-muted: var(--c-slate-500);
+
+  /* Danger */
+  --c-danger: #dc2626;
+  --c-danger-hover: #b91c1c;
+  --c-danger-soft: #fef2f2;
+  --c-danger-contrast: #ffffff;
+
+  /* Status color mapping (bg / text / border) */
+  --c-status-generated-bg: #eff6ff;
+  --c-status-generated-fg: #1d4ed8;
+  --c-status-generated-bd: #bfdbfe;
+
+  --c-status-pending-bg: #fffbeb;
+  --c-status-pending-fg: #b45309;
+  --c-status-pending-bd: #fde68a;
+
+  --c-status-approved-bg: #ecfdf5;
+  --c-status-approved-fg: #047857;
+  --c-status-approved-bd: #a7f3d0;
+
+  --c-status-rejected-bg: #fef2f2;
+  --c-status-rejected-fg: #b91c1c;
+  --c-status-rejected-bd: #fecaca;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.35);
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-contrast);
+}
+.btn--primary:not(:disabled):hover {
+  background: var(--c-accent-hover);
+}
+.btn--primary:not(:disabled):active {
+  background: var(--c-accent-active);
+}
+
+.btn--secondary {
+  background: var(--c-surface);
+  color: var(--c-text);
+  border-color: var(--c-border);
+}
+.btn--secondary:not(:disabled):hover {
+  background: var(--c-surface-muted);
+  border-color: var(--c-slate-300);
+}
+
+.btn--danger {
+  background: var(--c-danger);
+  color: var(--c-danger-contrast);
+}
+.btn--danger:not(:disabled):hover {
+  background: var(--c-danger-hover);
+}
+
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badge--generated {
+  background: var(--c-status-generated-bg);
+  color: var(--c-status-generated-fg);
+  border-color: var(--c-status-generated-bd);
+}
+.badge--pending {
+  background: var(--c-status-pending-bg);
+  color: var(--c-status-pending-fg);
+  border-color: var(--c-status-pending-bd);
+}
+.badge--approved {
+  background: var(--c-status-approved-bg);
+  color: var(--c-status-approved-fg);
+  border-color: var(--c-status-approved-bd);
+}
+.badge--rejected {
+  background: var(--c-status-rejected-bg);
+  color: var(--c-status-rejected-fg);
+  border-color: var(--c-status-rejected-bd);
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--interactive {
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.card--interactive:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--c-slate-300);
+}
+.card--interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.card--interactive:active {
+  transform: translateY(1px);
+}
+
+/* ---------- LoadingSpinner ---------- */
+.spinner-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--c-text-muted);
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--c-slate-200);
+  border-top-color: var(--c-accent);
+  border-radius: 50%;
+  animation: spinner-rotate 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner-label {
+  font-size: 0.9rem;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 1.6s;
+  }
+}
+
+/* ---------- ErrorMessage ---------- */
+.error-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4);
+  background: var(--c-danger-soft);
+  border: 1px solid var(--c-status-rejected-bd);
+  border-radius: var(--radius-md);
+  color: var(--c-danger-hover);
+}
+
+.error-message__text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* ---------- EmptyState ---------- */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-5);
+  background: var(--c-surface-muted);
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+  color: var(--c-text-muted);
+}
+
+.empty-state__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.empty-state__description {
+  margin: 0;
+  max-width: 42ch;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.empty-state__action {
+  margin-top: var(--space-2);
+}
+
+/* ---------- Accessibility helper ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Status pill ---------- */
+.pill { display: inline-block; padding: 1px var(--space-2); border-radius: var(--radius-pill); font-size: 0.75rem; font-weight: 600; border: 1px solid var(--c-border); }
+.pill--ok { background: var(--c-status-approved-bg); color: var(--c-status-approved-fg); border-color: var(--c-status-approved-bd); }
+.pill--bad { background: var(--c-status-rejected-bg); color: var(--c-status-rejected-fg); border-color: var(--c-status-rejected-bd); }
+.pill--warn { background: var(--c-status-pending-bg); color: var(--c-status-pending-fg); border-color: var(--c-status-pending-bd); }
+.pill--info { background: var(--c-status-generated-bg); color: var(--c-status-generated-fg); border-color: var(--c-status-generated-bd); }
+.pill--muted { background: var(--c-surface-muted); color: var(--c-text-muted); }
+
+/* ---------- Notice banner ---------- */
+.notice { margin: 0; padding: var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--c-status-pending-bd); background: var(--c-status-pending-bg); }

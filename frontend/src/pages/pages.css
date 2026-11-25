@@ -1,0 +1,274 @@
+/* Page-level layout built on top of the common design tokens
+   defined in src/components/common/common.css. */
+
+.page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-5);
+  box-sizing: border-box;
+  text-align: left;
+  color: var(--c-text);
+}
+
+.page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.page__title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.page__subtitle {
+  margin: var(--space-2) 0 0;
+  color: var(--c-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.page__back {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  color: var(--c-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.page__back:hover {
+  text-decoration: underline;
+}
+
+.page__state {
+  margin-top: var(--space-5);
+}
+
+/* ---------- Dashboard ---------- */
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+.project-card__name {
+  margin: 0 0 var(--space-2);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.project-card__stage {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--c-accent-soft);
+  color: var(--c-accent-active);
+  border: 1px solid var(--c-accent-soft);
+}
+
+.project-card__description {
+  margin: var(--space-3) 0;
+  color: var(--c-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card__counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+}
+
+.count-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.count-chip--generated {
+  background: var(--c-status-generated-bg);
+  color: var(--c-status-generated-fg);
+  border-color: var(--c-status-generated-bd);
+}
+.count-chip--pending {
+  background: var(--c-status-pending-bg);
+  color: var(--c-status-pending-fg);
+  border-color: var(--c-status-pending-bd);
+}
+.count-chip--approved {
+  background: var(--c-status-approved-bg);
+  color: var(--c-status-approved-fg);
+  border-color: var(--c-status-approved-bd);
+}
+.count-chip--rejected {
+  background: var(--c-status-rejected-bg);
+  color: var(--c-status-rejected-fg);
+  border-color: var(--c-status-rejected-bd);
+}
+
+.project-card__timestamps {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-3);
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+}
+
+/* ---------- Create project form ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 560px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.form__input,
+.form__textarea {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--c-text);
+  background: var(--c-surface);
+  padding: var(--space-3);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  box-sizing: border-box;
+  width: 100%;
+}
+.form__input:focus-visible,
+.form__textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-color: var(--c-accent);
+}
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form__input--invalid,
+.form__textarea--invalid {
+  border-color: var(--c-danger);
+}
+
+.form__hint {
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+}
+
+.form__error {
+  font-size: 0.8rem;
+  color: var(--c-danger);
+}
+
+.form__actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* ---------- Workspace ---------- */
+.workspace__section {
+  margin-top: var(--space-6);
+}
+
+.workspace__section-title {
+  margin: 0 0 var(--space-3);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+.workspace__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-3) 0 0;
+}
+.workspace__fact {
+  margin: 0;
+}
+.workspace__fact dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--c-text-muted);
+}
+.workspace__fact dd {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--c-text);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.filter-tab {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-muted);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.filter-tab:hover {
+  background: var(--c-surface-muted);
+}
+.filter-tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.filter-tab--active {
+  background: var(--c-accent);
+  color: var(--c-accent-contrast);
+  border-color: var(--c-accent);
+}
+
+/* ---------- Not found ---------- */
+.notfound {
+  text-align: center;
+  padding: var(--space-6) var(--space-5);
+}

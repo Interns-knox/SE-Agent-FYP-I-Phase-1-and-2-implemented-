@@ -1,0 +1,42 @@
+# Environment and secrets (only .env.example is committed)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+npm-debug.log*
+
+# Local databases, dumps and logs
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+*.log
+
+# Editors, OS and assistant metadata
+.idea/
+.vscode/
+.kiro/
+.DS_Store
+Thumbs.db
+
+# Local verification output
+ui-shots/

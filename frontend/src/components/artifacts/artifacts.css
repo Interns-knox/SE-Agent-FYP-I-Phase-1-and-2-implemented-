@@ -1,0 +1,209 @@
+/* Phase 2 artifact screens. Reuses tokens from common.css. */
+.artifact-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.artifact-tab {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-pill);
+  color: var(--c-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: var(--c-surface);
+}
+.artifact-tab--active {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-accent-contrast);
+}
+.artifact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.artifact__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.artifact__title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.artifact__muted {
+  color: var(--c-text-muted);
+  font-size: 0.875rem;
+}
+.artifact__success {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--c-status-approved-bd);
+  background: var(--c-status-approved-bg);
+  color: var(--c-status-approved-fg);
+  border-radius: var(--radius-sm);
+}
+.artifact__empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+.artifact__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: 0;
+  font-size: 0.85rem;
+}
+.artifact__facts dt {
+  color: var(--c-text-muted);
+}
+.artifact__facts dd {
+  margin: 0;
+}
+.artifact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.artifact__feedback {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+  font-size: 0.85rem;
+  color: var(--c-text-muted);
+}
+.artifact__feedback textarea,
+.artifact__json,
+.artifact__note {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  font: inherit;
+}
+.artifact__json {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+}
+.artifact__editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.artifact__section {
+  border-top: 1px solid var(--c-border);
+  padding-top: var(--space-3);
+}
+.artifact__section h4 {
+  margin: 0 0 var(--space-2);
+}
+.artifact__versions {
+  padding-left: var(--space-4);
+  font-size: 0.875rem;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+.artifact-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.artifact-table th,
+.artifact-table td {
+  border: 1px solid var(--c-border);
+  padding: var(--space-2);
+  text-align: left;
+  vertical-align: top;
+}
+.artifact-table th {
+  background: var(--c-surface-muted);
+}
+.artifact-table__list {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+.chip {
+  display: inline-block;
+  margin: 0 var(--space-1) var(--space-1) 0;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--c-accent-soft);
+  font-size: 0.78rem;
+}
+.code-block {
+  margin: 0;
+  padding: var(--space-3);
+  overflow-x: auto;
+  background: var(--c-slate-900);
+  color: var(--c-slate-100);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--c-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  font: inherit;
+}
+.srs__body {
+  white-space: pre-wrap;
+}
+.db-entity,
+.uml {
+  margin-bottom: var(--space-4);
+}
+.validation__summary {
+  margin: 0 0 var(--space-2);
+}
+.validation__status {
+  font-weight: 600;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+.validation__status--passed {
+  background: var(--c-status-approved-bg);
+  color: var(--c-status-approved-fg);
+}
+.validation__status--passed_with_warnings {
+  background: var(--c-status-pending-bg);
+  color: var(--c-status-pending-fg);
+}
+.validation__status--failed {
+  background: var(--c-status-rejected-bg);
+  color: var(--c-status-rejected-fg);
+}
+.validation__list {
+  margin: 0;
+  padding-left: var(--space-4);
+  font-size: 0.875rem;
+}
+.validation__group-title {
+  margin: var(--space-2) 0 var(--space-1);
+}
+.validation__group--error .validation__group-title {
+  color: var(--c-status-rejected-fg);
+}
+.validation__group--warning .validation__group-title {
+  color: var(--c-status-pending-fg);
+}
+.validation__code {
+  font-size: 0.75rem;
+}
+.validation__path,
+.validation__suggestion {
+  color: var(--c-text-muted);
+}
+.chip--warn { background: var(--c-status-pending-bg); color: var(--c-status-pending-fg); }
